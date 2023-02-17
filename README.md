@@ -1,1 +1,1 @@
-# Create-a-game-in-JS
+# Create a game in JS
