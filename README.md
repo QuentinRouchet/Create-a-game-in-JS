@@ -21,7 +21,7 @@ Dans un premier temps, nous allons sélectioner le canvas grâce à son id.
 
 ```javascript
   // L'évènement load est déclenché lorsque la page et toutes ses ressources dépendantes (telles que les feuilles de style et des images) sont complètement chargées.
-  window.addEventListener("load", () => {
+window.addEventListener("load", () => {
   const canvas = document.querySelector("#canvas1");
   const ctx = canvas.getContext("2d");
   canvas.width = 532;
