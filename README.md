@@ -17,6 +17,6 @@ Dans Android Jump vous pouvez sauter, tirer, tomber, recommencer. Le but du jeu 
 
 Premièrement, pensez à clone ce repository. Dans le dossier il y les assests graphiques, notre fichier HTML très simple et un css déjà complèter. En effet, on va essayer de ne pas perdre trop de temps avec des choses que vous connaissez déjà.
 
-```
+```javascript
 console.log('Salut')
 ```
