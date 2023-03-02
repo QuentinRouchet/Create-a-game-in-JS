@@ -9,3 +9,6 @@ Bonjour et bienvenue dans ce workshop ou nous allons crée un clone de Doodle Ju
 * déplacer un personnage
 * générer un niveau de manière aléatoire
 
+## Présentation du jeu
+
+Dans Android Jump vous pouvez sauter, tirer, tomber, recommencer. Le but du jeu étant d'essayer d'aller le plus haut possible et ainsi de toujours faire un meilleur score qu'avant. Si vous tombez, vous recommencez. Sur votre chemin il y aura des ennemis, des plateformes fixes, des plateformes mouveantes et des plateformes qui cassent.
