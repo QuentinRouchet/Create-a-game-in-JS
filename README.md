@@ -17,6 +17,14 @@ Dans Android Jump vous pouvez sauter, tirer, tomber, recommencer. Le but du jeu 
 
 Premièrement, pensez à clone ce repository. Dans le dossier il y les assests graphiques, notre fichier HTML très simple et un css déjà complèter. En effet, on va essayer de ne pas perdre trop de temps avec des choses que vous connaissez déjà.
 
+Dans un premier temps, nous allons sélectioner le canvas grâce à son id.
+
 ```javascript
-console.log('Salut')
+  // L'évènement load est déclenché lorsque la page et toutes ses ressources dépendantes (telles que les feuilles de style et des images) sont complètement chargées.
+  window.addEventListener("load", () => {
+  const canvas = document.querySelector("#canvas1");
+  const ctx = canvas.getContext("2d");
+  canvas.width = 532;
+  canvas.height = 850;
+});
 ```
