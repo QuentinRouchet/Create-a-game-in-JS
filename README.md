@@ -96,7 +96,9 @@ game.init();
 
 ### 2. Doodler (character) object
 
-Let's create our main character. Comme pour l'objet jeu, nous allons devoir l'initialiser, l'update et l'afficher. On va aussi lui donner une positon sur le plan, une taille, et d'autres parametres bien utiles. Nous mettons les deux sources du main character dans sources et on se sert d'une boucle et de direction pour définir dans quel sens le personnage doit être tourner
+Let's create our main character. Comme pour l'objet jeu, nous allons devoir l'initialiser, l'update et l'afficher. On va aussi lui donner une positon sur le plan, une taille, et d'autres parametres bien utiles. 
+
+Nous mettons les deux sources du main character dans sources et on se sert d'une boucle et de direction pour définir dans quel sens le personnage doit être tourner.
 
 ```javascript
 const doodler = {
@@ -113,6 +115,7 @@ const doodler = {
     this.sources = ["./assets/doodler-left.png", "./assets/doodler-right.png"];
     this.images = [];
 
+    // This loop alows us to flip the doodler
     this.sources.forEach((source, i) => {
       this.images[i] = new Image();
       this.images[i].src = source;
@@ -130,3 +133,32 @@ const doodler = {
 ```
 
 ### 3. Controler object
+
+Comme son l'indique, le controller va nous permettre dencontroler le personnage
+
+```javascript
+const controller = {
+  keys: null,
+  init: function () {
+    // EventListener
+    // param 1 = action / l'évènement.
+    // param 2 = la fonction appellée lorsque l'évènement est triger.
+    // param 3 = on désactive le bubbling pour empêcher que l'évènement remonte dans le DOM.
+    // Le bubbling = propagation de l'évènemenbt sur l'aboresance.
+    window.addEventListener("keydown", this.keyDown, false);
+    window.addEventListener("keyup", this.keyUp, false);
+
+    this.keys = new Map();
+  },
+
+  keyUp: function (e) {
+    // on récupére le code de la touche qui lui est associée
+    // le set récupere en parametre la clé et sa valeur
+    controller.keys.set(e.code, false);
+  },
+
+  keyDown: function (e) {
+    controller.keys.set(e.code, true);
+  },
+};
+```
