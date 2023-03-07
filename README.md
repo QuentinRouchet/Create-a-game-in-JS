@@ -2,21 +2,21 @@
 
 ## Introduction 
 
-Bonjour et bienvenue dans ce workshop ou nous allons crée un clone de Doodle Jump. Nous allons traviller avec du Java Script vanilla. Mais ne vous inquiétez pas, vous allez apprendre beaucoups de nouvelles choses comme :
+Hello and welcome to this workshop where we will create a Doodle Jump clone. We will work with vanilla Java Script. But don't worry, you will learn a lot of new things like :
 
-* mettre en place un système physique
-* crée une hitbox
-* déplacer un personnage
-* générer un niveau de manière aléatoire
-* Gérer un score
+* Set up a physical system
+* Create an hitbox
+* Move a character
+* Generate a level in a random way
+* Manage a score
 
-## Présentation du jeu
+## Game presentation
 
-Dans Doodled Jump vous pouvez sauter, tomber, recommencer. Le but du jeu étant d'essayer d'aller le plus haut possible et ainsi de toujours faire un meilleur score qu'avant. Si vous tombez, vous recommencez.
+In Doodled Jump you can jump, fall, and start over. The goal of the game is to try to go as high as possible and always get a better score than before. If you fall, you start over.
 
-## Le tuto
+## The tutorial
 
-Premièrement, pensez à clone ce repository. Dans le dossier il y les assests graphiques, notre fichier HTML très simple et un css déjà complèter. En effet, on va essayer de ne pas perdre trop de temps avec des choses que vous connaissez déjà.
+First, think about cloning this repository. In the assets folder there are the graphical assests. The HTML and CSS are already completed. Indeed, we will try not to waste too much time with things you already know.
 
 ### 1. Game object
 
@@ -133,7 +133,7 @@ const doodler = {
 };
 ```
 
-### 3. Controler
+### 3. Controller
 
 Comme son l'indique, le controller va nous permettre de controler le personnage.
 
