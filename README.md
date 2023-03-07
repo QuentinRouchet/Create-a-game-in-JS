@@ -95,7 +95,7 @@ const game = {
 game.init();
 ```
 
-### 2. Doodler (character) object
+### 2. Doodler (character)
 
 Let's create our main character. Comme pour l'objet jeu, nous allons devoir l'initialiser, l'update et l'afficher. On va aussi lui donner une positon sur le plan, une taille, et d'autres parametres bien utiles. 
 
@@ -133,7 +133,7 @@ const doodler = {
 };
 ```
 
-### 3. Controler object
+### 3. Controler
 
 Comme son l'indique, le controller va nous permettre de controler le personnage.
 
