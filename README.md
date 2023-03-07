@@ -35,10 +35,6 @@ const game = {
     this.frame = 0;
     this.platforms = [];
 
-    controller.init();
-
-    doodler.init();
-
     this.update();
   },
 
@@ -46,17 +42,14 @@ const game = {
   update: function () {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-    this.draw();
-    doodler.update();
-
     window.requestAnimationFrame(() => {
-      this.update();
+
     });
   },
 
   // Draw / display the elements
   draw: function () {
-    doodler.draw();
+  
   },
 };
 ```
