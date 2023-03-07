@@ -12,7 +12,7 @@ Hello and welcome to this workshop where we will create a Doodle Jump clone. We 
 
 ## Game presentation
 
-In Doodled Jump you can jump, fall, and start over. The goal of the game is to try to go as high as possible and always get a better score than before. If you fall, you start over.
+In Doodle Jump you can jump, fall, and start over. The goal of the game is to try to go as high as possible and always get a better score than before. If you fall, you start over.
 
 ## The tutorial
 
