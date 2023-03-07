@@ -17,7 +17,8 @@ Dans Doodled Jump vous pouvez sauter, tomber, recommencer. Le but du jeu étant 
 
 Premièrement, pensez à clone ce repository. Dans le dossier il y les assests graphiques, notre fichier HTML très simple et un css déjà complèter. En effet, on va essayer de ne pas perdre trop de temps avec des choses que vous connaissez déjà.
 
-Premièrement, nous allons crée un un objet game dans le JS. Comme vous l'avez sans doute remarquez, nous allons travailler dans un canvas.
+Premièrement, nous allons crée un un objet ```game``` dans le JS. Comme vous l'avez sans doute remarquez, nous allons travailler dans un canvas. Donc à l'intérieur de l'objet game, sélectionnons le canvas et 
+
 
 ```javascript
 const game = {
