@@ -134,17 +134,22 @@ const doodler = {
 
 ### 3. Controler object
 
-Comme son l'indique, le controller va nous permettre dencontroler le personnage
+Comme son l'indique, le controller va nous permettre de controler le personnage.
+
+Au niveau de l'event listener nous entrons trois paramètres : 
+* Paramètre 1 : action / l'évènement.
+* Paramètre 2 : la fonction est appellée lorsque l'évènement est triger.
+* Paramètre 3 : on désactive le bubbling pour empêcher que l'évènement remonte dans le DOM.
+
+Le ```set``` prend toujours deux paramètres :
+* Paramètre 1 : la clé
+* Paramètre 2 : sa valeur
 
 ```javascript
 const controller = {
   keys: null,
   init: function () {
-    // EventListener
-    // param 1 = action / l'évènement.
-    // param 2 = la fonction appellée lorsque l'évènement est triger.
-    // param 3 = on désactive le bubbling pour empêcher que l'évènement remonte dans le DOM.
-    // Le bubbling = propagation de l'évènemenbt sur l'aboresance.
+
     window.addEventListener("keydown", this.keyDown, false);
     window.addEventListener("keyup", this.keyUp, false);
 
@@ -152,8 +157,8 @@ const controller = {
   },
 
   keyUp: function (e) {
-    // on récupére le code de la touche qui lui est associée
-    // le set récupere en parametre la clé et sa valeur
+    // we get the key code associated with it
+    // the set retrieves the key and its value as parameters
     controller.keys.set(e.code, false);
   },
 
