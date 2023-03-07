@@ -35,6 +35,30 @@ const game = {
 
   // Initialize the game properties
   init: function () {
+
+  },
+
+  // Update the game elements
+  update: function () {
+  
+  },
+
+  // Draw / display the elements
+  draw: function () {
+  
+  },
+};
+```
+
+
+
+```javascript
+const game = {
+  canvas: document.querySelector("#game"),
+  gameover: false,
+
+  // Initialize the game properties
+  init: function () {
     this.ctx = this.canvas.getContext("2d");
     this.canvas.width = 400;
     this.canvas.height = 800;
