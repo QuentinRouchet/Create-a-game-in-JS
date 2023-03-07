@@ -23,6 +23,15 @@ Premièrement, nous allons crée un un objet game dans le JS. Comme vous l'avez 
 const game = {
   canvas: document.querySelector("#game"),
   gameover: false,
+};
+```
+
+
+
+```javascript
+const game = {
+  canvas: document.querySelector("#game"),
+  gameover: false,
 
   // Initialize the game properties
   init: function () {
