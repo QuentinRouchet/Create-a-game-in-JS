@@ -17,8 +17,7 @@ Dans Doodled Jump vous pouvez sauter, tomber, recommencer. Le but du jeu étant 
 
 Premièrement, pensez à clone ce repository. Dans le dossier il y les assests graphiques, notre fichier HTML très simple et un css déjà complèter. En effet, on va essayer de ne pas perdre trop de temps avec des choses que vous connaissez déjà.
 
-Premièrement, nous allons crée un un objet ```game``` dans le JS. Comme vous l'avez sans doute remarquez, nous allons travailler dans un canvas. Donc à l'intérieur de l'objet game, sélectionnons le canvas et 
-
+La première étape est de crée un un objet ```game```. Comme vous l'avez sans doute remarquez, nous allons travailler dans un canvas. Donc à l'intérieur de l'objet game, sélectionnons le canvas et parametrons la variable gameover sur false. Elle nous sera utile plus tard.
 
 ```javascript
 const game = {
@@ -27,7 +26,10 @@ const game = {
 };
 ```
 
-
+Lorsque l'on crée un jeu, nous avons besoin de trois fonctions essensiel :
+* La fonction init : nous permet d'initialiser un état.
+* La fonction update : nous permet de changer l'état du jeu dynamiquement.
+* La fonction draw : nous permet d'afficher, de dessiner les éléments.
 
 ```javascript
 const game = {
@@ -51,7 +53,7 @@ const game = {
 };
 ```
 
-
+La première chose à faire est bien entendu d'initialiser le jeu.
 
 ```javascript
 const game = {
