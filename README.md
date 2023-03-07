@@ -55,7 +55,7 @@ const game = {
 };
 ```
 
-Nous allons maintenant nous occuper du init. Donnons lui un context 2D car le jeu est en 2D. Donnons une hauteur et une largeur au canvas.
+Nous allons maintenant nous occuper du init. Donnons lui un context 2D car le jeu est en 2D. On va aussi définir une hauteur et une largeur au canvas. Initialisons aussi les autres valeurs qui nous serons utiles plus tard.
 
 ```javascript
 const game = {
@@ -90,8 +90,43 @@ const game = {
   
   },
 };
+
+game.init();
 ```
 
 ### 2. Doodler (character) object
+
+Let's create our main character. Comme pour l'objet jeu, nous allons devoir l'initialiser, l'update et l'afficher. On va aussi lui donner une positon sur le plan, une taille, et d'autres parametres bien utiles. Nous mettons les deux sources du main character dans sources et on se sert d'une boucle et de direction pour définir dans quel sens le personnage doit être tourner
+
+```javascript
+const doodler = {
+  init: function () {
+    this.x = -20;
+    this.y = 600;
+    this.width = 92;
+    this.height = 90; 
+    this.vx = 0; // Character velocity on x
+    this.vy = 0; // Character velocity on y
+    this.speed = 10;
+    this.jumpforce = 25;
+    this.direction = 1; // 0 = left, 1 = right
+    this.sources = ["./assets/doodler-left.png", "./assets/doodler-right.png"];
+    this.images = [];
+
+    this.sources.forEach((source, i) => {
+      this.images[i] = new Image();
+      this.images[i].src = source;
+    });
+  },
+  
+  update: function () {
+
+  },
+  
+  draw: function () {
+   
+  },
+};
+```
 
 ### 3. Controler object
