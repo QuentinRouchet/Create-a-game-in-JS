@@ -8,6 +8,7 @@ Bonjour et bienvenue dans ce workshop ou nous allons crée un clone de Doodle Ju
 * crée une hitbox
 * déplacer un personnage
 * générer un niveau de manière aléatoire
+* Gérer un score
 
 ## Présentation du jeu
 
