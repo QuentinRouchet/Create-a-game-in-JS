@@ -57,9 +57,11 @@ const game = {
   draw: function () {
   
   },
+  
   playing: function() {
   
   }, 
+  
   gameOver: function() {
   
   }
@@ -105,6 +107,7 @@ const game = {
   draw: function () {
     doodler.draw();
   },
+  
   playing: function () {
     doodler.update();
 
@@ -117,6 +120,7 @@ const game = {
     this.draw();
     this.frame++;
   },
+  
   gameOver: function () {
     
   },
