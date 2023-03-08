@@ -59,32 +59,28 @@ const game = {
 Nous allons maintenant nous occuper du init. Donnons lui un context 2D car le jeu est en 2D. On va aussi définir une hauteur et une largeur au canvas. Initialisons aussi les autres valeurs qui nous serons utiles plus tard.
 
 ```javascript
+
 const game = {
   canvas: document.querySelector("#game"),
   gameover: false,
 
-  // Initialize the game properties
   init: function () {
     this.ctx = this.canvas.getContext("2d");
     this.canvas.width = 600;
     this.canvas.height = 800;
     this.gravity = 8;
     this.score = 0;
+    this.realScore = 0;
     this.highscore = 0;
     this.frame = 0;
     this.platforms = [];
     this.currentMode = "playing";
-    
-    // Call init from controller object
-    controller.init();
 
-    // Call init from Doodler objet
     doodler.init();
 
     this.update();
   },
 
-  // Update the game elements
   update: function () {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
@@ -96,9 +92,23 @@ const game = {
     });
   },
 
-  // Draw / display the elements
   draw: function () {
-  
+    doodler.draw();
+  },
+  playing: function () {
+    doodler.update();
+
+    this.platforms.forEach((platform, index) => {
+      platform.update();
+    });
+
+    this.realScore += Math.round(-doodler.vy / 5);
+    this.score = this.score < this.realScore ? this.realScore : this.score;
+    this.draw();
+    this.frame++;
+  },
+  gameOver: function () {
+    
   },
 };
 
