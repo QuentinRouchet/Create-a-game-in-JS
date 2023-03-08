@@ -219,17 +219,15 @@ Dans l'objet ```game``` au niveau du ```init``` il faut appeller le ```init``` d
 Dans l'objet ```doodler``` au niveau du ```update``` il faut ajouter ces deux conditions :
 
 ```javascript
-  update: function () {
-    if (controller.keys.get("ArrowLeft")) {
-      this.vx = -this.speed;
-      this.direction = 0;
-    } else if (controller.keys.get("ArrowRight")) {
-      this.vx = this.speed;
-      this.direction = 1;
-    } else {
-      this.vx = 0;
-    }
-  },
+  if (controller.keys.get("ArrowLeft")) {
+    this.vx = -this.speed;
+    this.direction = 0;
+  } else if (controller.keys.get("ArrowRight")) {
+    this.vx = this.speed;
+    this.direction = 1;
+  } else {
+    this.vx = 0;
+  }
 ```
 
 Magie! Le doodler peut se balader de gauche à droite maintenant. Vous remarquerez que le personnage peut sortir de l'écran. Dans le vrai jeu Doodle Jump, le personnage peut passer d'un côté à l'autre de l'écran. Let's do the same!
@@ -237,12 +235,10 @@ Magie! Le doodler peut se balader de gauche à droite maintenant. Vous remarquer
 Toujours dans la fonction ```update``` du ```doodler``` ajoutez ceci :
 
 ```javascript
-  update: function () {
-    if (this.x > game.canvas.width) {
-      this.x = 0;
-    }
-    if (this.x < 0) {
-      this.x = game.canvas.width;
-    }
-  },
+  if (this.x > game.canvas.width) {
+    this.x = 0;
+  }
+  if (this.x < 0) {
+    this.x = game.canvas.width;
+  }
 ```
