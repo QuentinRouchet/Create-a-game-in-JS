@@ -177,11 +177,12 @@ const doodler = {
 ```
 
 Et voila ! Normalement, le personnage devrait apparaitre sur votre écran en haut à gauche.
+Okay, now we have initialize the game. Let's go to the second part to make the character move.
 
-## Part 2
+## Part 2 - Make the doodler move
 
-### 3. Controller
-Comme son l'indique, le controller va nous permettre de controler le personnage. Nous auron besoin d'```EventListener``` pour vérifier quelle touche est pressée et quand est-ce qu'elle est relachée.
+### Controller
+Comme son nom l'indique, le controller va nous permettre de controler le personnage. Nous auron besoin d'```EventListener``` pour vérifier quelle touche est pressée et quand est-ce qu'elle est relachée.
 
 Au niveau de l'```EventListener``` nous entrons trois paramètres : 
 * Paramètre 1 : action / l'évènement.
@@ -212,5 +213,3 @@ const controller = {
   },
 };
 ```
-
-Okay, now we have initialize the game. Let's go to the second part to make our platform.
