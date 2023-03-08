@@ -245,7 +245,7 @@ Toujours dans la fonction ```update``` du ```doodler``` ajoutez ceci :
   }
 ```
 
-Maintenant nous devons afficher le résultat, pour ça nous devons accéder à la fonction ```draw``` du ```doodler``` et préciser ceci :
+Maintenant nous devons lui faire afficher le résultat, pour ça nous devons accéder à la fonction ```draw``` du ```doodler``` et préciser ceci :
 
 ```javascript
   game.ctx.drawImage(
