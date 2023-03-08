@@ -18,6 +18,8 @@ In Doodle Jump you can jump, fall, and start over. The goal of the game is to tr
 
 First, think about fork this repository. In the assets folder there are the graphical assests. The HTML and CSS are already completed. Indeed, we will try to not waste too much time with things you already know.
 
+## Part 1
+
 ### 1. Game object
 
 La première étape est de crée un un objet ```game```. Comme vous l'avez sans doute remarquez, nous allons travailler dans un canvas. Donc à l'intérieur de l'objet game, sélectionnons le canvas et parametrons la variable gameover sur false. Elle nous sera utile plus tard.
@@ -132,17 +134,18 @@ Nous mettons les deux sources du main character dans sources et on se sert d'une
 ```javascript
 const doodler = {
   init: function () {
-    this.x = -20;
-    this.y = 600;
+    this.x = 20;
+    this.y = 200;
     this.width = 92;
-    this.height = 90; 
+    this.height = 90;
     this.vx = 0; // Character velocity on x
     this.vy = 0; // Character velocity on y
     this.speed = 10;
-    this.jumpforce = 25;
+    this.jumpforce = -25;
     this.direction = 1; // 0 = left, 1 = right
     this.sources = ["./assets/doodler-left.png", "./assets/doodler-right.png"];
     this.images = [];
+    this.offsetTop = 90;
 
     // This loop alows us to flip the doodler
     this.sources.forEach((source, i) => {
@@ -150,16 +153,26 @@ const doodler = {
       this.images[i].src = source;
     });
   },
-  
-  update: function () {
 
+  update: function () {
+    if (this.x > game.canvas.width) {
+      this.x = 0;
+    }
+    if (this.x < 0) {
+      this.x = game.canvas.width;
+    }
+
+    this.x += this.vx;
+    this.y += this.vy;
   },
-  
+
   draw: function () {
-   
+    game.ctx.drawImage(this.images[this.direction], this.x, this.y);
   },
 };
 ```
+
+## Part 2
 
 ### 3. Controller
 Comme son l'indique, le controller va nous permettre de controler le personnage. Nous auron besoin d'```EventListener``` pour vérifier quelle touche est pressée et quand est-ce qu'elle est relachée.
