@@ -259,3 +259,9 @@ Maintenant nous devons lui faire afficher le résultat, pour ça nous devons acc
     this.y
   );
 ```
+
+## Part 3 - Platform
+
+## Part 4 - Physique
+
+## Part 5 - Score and reset
