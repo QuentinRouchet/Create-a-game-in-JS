@@ -66,13 +66,20 @@ const game = {
   // Initialize the game properties
   init: function () {
     this.ctx = this.canvas.getContext("2d");
-    this.canvas.width = 400;
+    this.canvas.width = 600;
     this.canvas.height = 800;
     this.gravity = 8;
     this.score = 0;
     this.highscore = 0;
     this.frame = 0;
     this.platforms = [];
+    this.currentMode = "playing";
+    
+    // Call init from controller object
+    controller.init();
+
+    // Call init from Doodler objet
+    doodler.init();
 
     this.update();
   },
@@ -81,8 +88,11 @@ const game = {
   update: function () {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-    window.requestAnimationFrame(() => {
+    // reload game
+    this[this.currentMode]();
 
+    window.requestAnimationFrame(() => {
+      this.update();
     });
   },
 
@@ -134,8 +144,7 @@ const doodler = {
 ```
 
 ### 3. Controller
-
-Comme son l'indique, le controller va nous permettre de controler le personnage.
+Comme son l'indique, le controller va nous permettre de controler le personnage. Nous auron besoin d'```EventListener``` pour vérifier quand la touche est enfoncée.
 
 Au niveau de l'```EventListener``` nous entrons trois paramètres : 
 * Paramètre 1 : action / l'évènement.
@@ -166,3 +175,5 @@ const controller = {
   },
 };
 ```
+
+### 4. Platform
