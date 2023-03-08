@@ -139,7 +139,7 @@ Comme son l'indique, le controller va nous permettre de controler le personnage.
 
 Au niveau de l'```EventListener``` nous entrons trois paramètres : 
 * Paramètre 1 : action / l'évènement.
-* Paramètre 2 : la fonction est appellée lorsque l'évènement est triger.
+* Paramètre 2 : la fonction appellée lorsque l'évènement est triger.
 * Paramètre 3 : on désactive le bubbling pour empêcher que l'évènement remonte dans le DOM.
 
 Le ```set``` prend toujours deux paramètres :
