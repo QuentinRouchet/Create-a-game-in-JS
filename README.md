@@ -232,6 +232,8 @@ Dans l'objet ```doodler``` au niveau du ```update``` il faut ajouter ces deux co
 
 Magie! Le doodler peut se balader de gauche à droite maintenant. Vous remarquerez que le personnage peut sortir de l'écran. Dans le vrai jeu Doodle Jump, le personnage peut passer d'un côté à l'autre de l'écran. Let's do the same!
 
+### Passage d'écran
+
 Toujours dans la fonction ```update``` du ```doodler``` ajoutez ceci :
 
 ```javascript
@@ -241,4 +243,19 @@ Toujours dans la fonction ```update``` du ```doodler``` ajoutez ceci :
   if (this.x < 0) {
     this.x = game.canvas.width;
   }
+```
+
+Maintenant nous devons afficher le résultat, pour ça nous devons accéder à la fonction ```draw``` du ```doodler``` et préciser ceci :
+
+```javascript
+  game.ctx.drawImage(
+    this.images[this.direction],
+    this.x + game.canvas.width,
+    this.y
+  );
+  game.ctx.drawImage(
+    this.images[this.direction],
+    this.x - game.canvas.width,
+    this.y
+  );
 ```
