@@ -144,7 +144,7 @@ const doodler = {
 ```
 
 ### 3. Controller
-Comme son l'indique, le controller va nous permettre de controler le personnage. Nous auron besoin d'```EventListener``` pour vérifier quand la touche est enfoncée.
+Comme son l'indique, le controller va nous permettre de controler le personnage. Nous auron besoin d'```EventListener``` pour vérifier quelle touche est pressée et quand est-ce qu'elle est relachée.
 
 Au niveau de l'```EventListener``` nous entrons trois paramètres : 
 * Paramètre 1 : action / l'évènement.
@@ -167,11 +167,11 @@ const controller = {
   },
 
   keyUp: function (e) {
-    controller.keys.set(e.code, false); // relache la touche
+    controller.keys.set(e.code, false); // Release key
   },
 
   keyDown: function (e) {
-    controller.keys.set(e.code, true); // maintient la touche enfoncée
+    controller.keys.set(e.code, true); // Hold Key
   },
 };
 ```
