@@ -159,13 +159,6 @@ const doodler = {
   },
 
   update: function () {
-    if (this.x > game.canvas.width) {
-      this.x = 0;
-    }
-    if (this.x < 0) {
-      this.x = game.canvas.width;
-    }
-
     this.x += this.vx;
     this.y += this.vy;
   },
