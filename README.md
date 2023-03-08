@@ -209,6 +209,13 @@ const controller = {
 
 A ce stade nous n'aurons plus besoin de modifier le controller.
 
+
+Dans l'objet ```game``` au niveau du ```init``` il faut appeller le ```init``` du ```controller```.
+
+```javascript
+  controller.init();
+```
+
 Dans l'objet ```doodler``` au niveau du ```update``` il faut ajouter ces deux conditions :
 
 ```javascript
