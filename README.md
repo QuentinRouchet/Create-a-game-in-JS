@@ -18,7 +18,7 @@ In Doodle Jump you can jump, fall, and start over. The goal of the game is to tr
 
 First, think about fork this repository. In the assets folder there are the graphical assests. The HTML and CSS are already completed. Indeed, we will try to not waste too much time with things you already know.
 
-## Part 1
+## Part 1 - Initialize the game
 
 ### 1. Game object
 
@@ -127,7 +127,7 @@ game.init();
 
 ### 2. Doodler (character)
 
-Let's create our main character. Comme pour l'objet jeu, nous allons devoir l'initialiser, l'update et l'afficher. On va aussi lui donner une positon sur le plan, une taille, et d'autres parametres bien utiles. 
+Let's create our main character. Comme pour l'objet jeu, nous allons devoir l'initialiser, l'update et l'afficher. On va aussi lui donner une positon sur le plan, une taille, et d'autres paramètres bien utiles. 
 
 Nous mettons les deux sources du main character dans sources et on se sert d'une boucle et de direction pour définir dans quel sens le personnage doit être tourner.
 
@@ -171,6 +171,8 @@ const doodler = {
   },
 };
 ```
+
+Et voila ! Normalement, le personnage devrait apparaitre sur votre écran en haut à gauche.
 
 ## Part 2
 
