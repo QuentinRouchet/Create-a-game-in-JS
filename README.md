@@ -206,3 +206,15 @@ const controller = {
   },
 };
 ```
+
+A ce stade nous n'aurons plus besoin de modifier le controller.
+
+Dans l'objet ```doodler``` au niveau du ```update``` il faut ajouter ces deux conditions :
+```javascript
+    if (this.x > game.canvas.width) {
+      this.x = 0;
+    }
+    if (this.x < 0) {
+      this.x = game.canvas.width;
+    }
+```
