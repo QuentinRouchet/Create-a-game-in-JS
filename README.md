@@ -34,7 +34,7 @@ Lorsque l'on crée un jeu, nous avons besoin de trois fonctions essensiel :
 * La fonction update : nous permet de changer l'état du jeu dynamiquement.
 * La fonction draw : nous permet d'afficher, de dessiner les éléments.
 
-Mais dans notre cas, on aura aussi besoin 
+Mais dans notre cas, on aura aussi besoin d'une fonction ```playing``` et ```gameOver```. ```playing``` définira l'état du jeu : est-ce que le jeu tourne ou est-il sur l'écran reset. Ensuite, le ```gameOver``` définira si le personnage est tombé hors de l'écran ou pas. 
 
 ```javascript
 const game = {
@@ -55,7 +55,12 @@ const game = {
   draw: function () {
   
   },
-  playing: function()
+  playing: function() {
+  
+  }, 
+  gameOver: function() {
+  
+  }
 };
 ```
 
