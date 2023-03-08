@@ -262,6 +262,8 @@ Maintenant nous devons lui faire afficher le résultat, pour ça nous devons acc
 
 ## Part 3 - Platform
 
+Let's create our platforms.
+
 ## Part 4 - Physique
 
 ## Part 5 - Score and reset
