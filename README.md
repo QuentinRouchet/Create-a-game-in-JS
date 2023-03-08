@@ -34,6 +34,8 @@ Lorsque l'on crée un jeu, nous avons besoin de trois fonctions essensiel :
 * La fonction update : nous permet de changer l'état du jeu dynamiquement.
 * La fonction draw : nous permet d'afficher, de dessiner les éléments.
 
+Mais dans notre cas, on aura aussi besoin 
+
 ```javascript
 const game = {
   canvas: document.querySelector("#game"),
@@ -53,6 +55,7 @@ const game = {
   draw: function () {
   
   },
+  playing: function()
 };
 ```
 
