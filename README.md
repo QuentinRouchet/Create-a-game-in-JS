@@ -210,13 +210,19 @@ const controller = {
 A ce stade nous n'aurons plus besoin de modifier le controller.
 
 Dans l'objet ```doodler``` au niveau du ```update``` il faut ajouter ces deux conditions :
+
 ```javascript
-update: function () {
-  if (this.x > game.canvas.width) {
-    this.x = 0;
-  }
-  if (this.x < 0) {
-    this.x = game.canvas.width;
-  }
-},
+  update: function () {
+    if (controller.keys.get("ArrowLeft")) {
+      this.vx = -this.speed;
+      this.direction = 0;
+    } else if (controller.keys.get("ArrowRight")) {
+      this.vx = this.speed;
+      this.direction = 1;
+    } else {
+      this.vx = 0;
+    }
+  },
 ```
+
+Magie ! Le doodler peut se balader de gauche à droite maintenant
