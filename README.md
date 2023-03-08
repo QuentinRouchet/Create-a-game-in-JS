@@ -194,4 +194,4 @@ const controller = {
 };
 ```
 
-### 4. Platform
+Okay, now we have initialize the game. Let's go to the second part to make our platform.
