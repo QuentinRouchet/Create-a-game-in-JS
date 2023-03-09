@@ -324,6 +324,15 @@ Nous allons maintenant faire en sorte de toujours avoir une plateforme en dessou
   this.platforms.push(firstPlatform);
 ```
 
+Dans le vrai jeu Doodle Jump, le personnage ne dépasse jamais la moitié de l'écran lorsqu'il saute. Cette condition va réler le probleme :
+
+```javascript
+    if (this.y < game.canvas.height / 2.8) {
+      this.y = game.canvas.height / 2.8;
+    }
+```
+
+
 ## Part 4 - Physique
 
 ## Part 5 - Score and reset
