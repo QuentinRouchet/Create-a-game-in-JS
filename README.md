@@ -288,6 +288,39 @@ class Platform {
 }
 ```
 
+Ajoute cette loop dans la fonction ```draw``` de l'objet ```game```
+
+```javascript
+  this.platforms.forEach((platform, index) => {
+    if (!platform.isAlive) {
+      return;
+    }
+    platform.draw();
+  });
+```
+
+Ajoute cette fonction dans l'objet ```game```
+
+```javascript
+  generatePlatforms: function (number = 1, baseY = 0) {
+    for (let i = 0; i < number; i++) {
+      const y = baseY - i * Platform.maxGap;
+      this.platforms.push(new Platform(y));
+    }
+  },
+```
+
+Maintenant il faut l'afficher donc direction le ```draw``` de ```game``` et écrit ça : 
+
+```javascript
+  this.platforms.forEach((platform, index) => {
+    if (!platform.isAlive) {
+      return;
+    }
+    platform.draw();
+  });
+```
+
 ## Part 4 - Physique
 
 ## Part 5 - Score and reset
