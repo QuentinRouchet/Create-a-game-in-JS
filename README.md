@@ -292,9 +292,6 @@ Ajoute cette loop dans la fonction ```draw``` de l'objet ```game```
 
 ```javascript
   this.platforms.forEach((platform, index) => {
-    if (!platform.isAlive) {
-      return;
-    }
     platform.draw();
   });
 ```
