@@ -263,9 +263,11 @@ class Platform {
   static maxGap = 250;
 
   constructor(y = 0) {
+    // We will need later to define if the platform should desapear or not
     this.isAlive = true;
     this.width = 138;
     this.height = 44;
+    // We already generate a position on x axe
     this.x = Math.random() * (game.canvas.width - this.width);
     this.y = y;
     this.vx = 0;
