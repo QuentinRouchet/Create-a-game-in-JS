@@ -313,6 +313,10 @@ Maintenant il faut l'initialiser donc direction le ```init``` de ```game``` et Ã
   this.generatePlatforms(3, doodler.y);
 ```
 
+### Next
+
+Nous allons maintenant faire en sorte de toujours
+
 ## Part 4 - Physique
 
 ## Part 5 - Score and reset
