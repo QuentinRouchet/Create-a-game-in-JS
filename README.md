@@ -344,9 +344,21 @@ Bizarre... Il ne se passe rien. Ajoutez cette ligne dans l'```update``` du ```do
 
 Woah! Le personnage tombe!
 
-```javascript
+Dans l'```update``` de la class ```Platform``` on peut ajouter ceci :
 
+```javascript
+  this.vy = -doodler.vy; // The dooler make a little jump at the start
+
+  this.x += this.vx;
+  this.y += this.vy;
 ```
+
+Now we need to call the function update inside the ```playing``` function of the ```game``` like this :
+
+```javascript
+  platform.update();
+```
+
 
 ## Part 5 - Score and reset
 
