@@ -315,7 +315,7 @@ Maintenant il faut l'initialiser donc direction le ```init``` de ```game``` et �
 
 ### Next
 
-Nous allons maintenant faire en sorte de toujours avoir une plateforme en dessous du doodler. Comme ça lorsqu'il apparaitra il ne pourra pas tomber directement dans le vide.
+Nous allons maintenant faire en sorte de toujours avoir une plateforme en dessous du doodler. Comme ça lorsqu'il apparaitra il ne pourra pas tomber directement dans le vide. Évidemment on initiliase ceci dans la fonction ```init``` de ```game```.
 
 ```javascript
   const firstPlatform = new Platform();
