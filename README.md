@@ -310,15 +310,10 @@ Ajoute cette fonction dans l'objet ```game```
   },
 ```
 
-Maintenant il faut l'afficher donc direction le ```draw``` de ```game``` et écrit ça : 
+Maintenant il faut l'initialiser donc direction le ```init``` de ```game``` et écrit ça : 
 
 ```javascript
-  this.platforms.forEach((platform, index) => {
-    if (!platform.isAlive) {
-      return;
-    }
-    platform.draw();
-  });
+  this.generatePlatforms(3, doodler.y);
 ```
 
 ## Part 4 - Physique
