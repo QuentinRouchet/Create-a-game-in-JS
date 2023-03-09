@@ -264,6 +264,10 @@ Maintenant nous devons lui faire afficher le résultat, pour ça nous devons acc
 
 Let's create our platforms.
 
+```javascript
+
+```
+
 ## Part 4 - Physique
 
 ## Part 5 - Score and reset
