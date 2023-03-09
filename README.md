@@ -347,6 +347,7 @@ Dans la fonction ```playing``` de l'objet ```game``` ajoutez ceci :
 ```javascript
   this.realScore += Math.round(-doodler.vy / 5);
   this.score = this.score < this.realScore ? this.realScore : this.score;
+  this.frame++;
 ```
 
 Et maintenant dans la fonction ```draw``` de ```game``` ajoutez ceci : 
@@ -359,3 +360,31 @@ Et maintenant dans la fonction ```draw``` de ```game``` ajoutez ceci :
 ```
 
 ### Game Over
+
+Dans fonction ```gameOver``` de ```game``` nous pouvons ajouter ceci :
+
+```javascript
+  this.ctx.font = "20px Arial";
+  this.ctx.textAlign = "center";
+  this.ctx.fillText(
+    `You lost`,
+    this.canvas.width / 2,
+    this.canvas.height / 2
+  );
+  this.ctx.fillText(
+    `Press SPACE to restart`,
+    this.canvas.width / 2,
+    this.canvas.height / 2 + 26
+  );
+  if (controller.keys.get("Space")) {
+    window.location = "index.html";
+  }
+```
+
+Et enfin la touche finale. Dans l'```update``` du  ```doodler``` on peut écrice ceci :
+
+```javascript
+  if (this.y > game.canvas.height) {
+    game.currentMode = "gameOver";
+  }
+```
