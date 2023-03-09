@@ -111,14 +111,7 @@ const game = {
   playing: function () {
     doodler.update();
 
-    this.platforms.forEach((platform, index) => {
-      platform.update();
-    });
-
-    this.realScore += Math.round(-doodler.vy / 5);
-    this.score = this.score < this.realScore ? this.realScore : this.score;
     this.draw();
-    this.frame++;
   },
   
   gameOver: function () {
