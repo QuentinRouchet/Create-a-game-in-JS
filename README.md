@@ -136,7 +136,7 @@ const doodler = {
     this.width = 92;
     this.height = 90;
     this.vx = 0; // Character velocity on x
-    this.vy = 0; // Character velocity on y
+    this.vy = -25; // Character velocity on y
     this.speed = 10;
     this.jumpforce = -25;
     this.direction = 1; // 0 = left, 1 = right
