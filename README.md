@@ -334,7 +334,19 @@ Dans le vrai jeu Doodle Jump, le personnage ne dépasse jamais la moitié de l'�
 
 ## Part 4 - Physique and hitbox
 
-Donnons un peu de mouvement à tout ça, mettez une vélocité sur l'axe y de -25 au ```doodler```. Vous constatez que le doodler tombe mais à l'enver. Et c'est tout à fait ce qu'on veut. Vous comprendrez un peu plus tard pourquoi.
+Donnons un peu de mouvement à tout ça, mettez une vélocité sur l'axe y de -25 au ```doodler```. 
+
+Bizarre... Il ne se passe rien. Ajoutez cette ligne dans l'```update``` du ```doodler``` : 
+
+```javascript
+  this.vy += this.vy > game.gravity ? 0 : 1;
+```
+
+Woah! Le personnage tombe!
+
+```javascript
+
+```
 
 ## Part 5 - Score and reset
 
