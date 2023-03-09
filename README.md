@@ -315,7 +315,14 @@ Maintenant il faut l'initialiser donc direction le ```init``` de ```game``` et ร
 
 ### Next
 
-Nous allons maintenant faire en sorte de toujours
+Nous allons maintenant faire en sorte de toujours avoir une plateforme en dessous du doodler. Comme รงa lorsqu'il apparaitra il ne pourra pas tomber directement dans le vide.
+
+```javascript
+  const firstPlatform = new Platform();
+  firstPlatform.y = doodler.y;
+  firstPlatform.x = doodler.x;
+  this.platforms.push(firstPlatform);
+```
 
 ## Part 4 - Physique
 
