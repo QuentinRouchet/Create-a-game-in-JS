@@ -255,10 +255,35 @@ Maintenant nous devons lui faire afficher le résultat, pour ça nous devons acc
 
 ## Part 3 - Platform
 
-Let's create our platforms.
+Let's create our platforms. Dans un premier nous allons crée la class ```Platform```
 
 ```javascript
+class Platform {
+  static minGap = 100;
+  static maxGap = 250;
 
+  constructor(y = 0) {
+    this.isAlive = true;
+    this.width = 138;
+    this.height = 44;
+    this.x = Math.random() * (game.canvas.width - this.width);
+    this.y = y;
+    this.vx = 0;
+    this.vy = 0;
+    this.source = "./assets/platform.png";
+    this.image = new Image();
+    this.image.src = this.source;
+    this.canGenerate = true;
+  }
+
+  update() {
+
+  }
+
+  draw() {
+    game.ctx.drawImage(this.image, this.x, this.y);
+  }
+}
 ```
 
 ## Part 4 - Physique
