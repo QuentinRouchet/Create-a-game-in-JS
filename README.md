@@ -136,7 +136,7 @@ const doodler = {
     this.width = 92;
     this.height = 90;
     this.vx = 0; // Character velocity on x
-    this.vy = -25; // Character velocity on y
+    this.vy = 0; // Character velocity on y
     this.speed = 10;
     this.jumpforce = -25;
     this.direction = 1; // 0 = left, 1 = right
@@ -332,8 +332,30 @@ Dans le vrai jeu Doodle Jump, le personnage ne dépasse jamais la moitié de l'�
     }
 ```
 
-## Part 4 - Physique
+## Part 4 - Physique and hitbox
 
 Donnons un peu de mouvement à tout ça, mettez une vélocité sur l'axe y de -25 au ```doodler```. Vous constatez que le doodler tombe mais à l'enver. Et c'est tout à fait ce qu'on veut. Vous comprendrez un peu plus tard pourquoi.
 
 ## Part 5 - Score and reset
+
+### Score
+
+Maintenant que le jeu est jouable, ajoutons un système de score.
+
+Dans la fonction ```playing``` de l'objet ```game``` ajoutez ceci :
+
+```javascript
+  this.realScore += Math.round(-doodler.vy / 5);
+  this.score = this.score < this.realScore ? this.realScore : this.score;
+```
+
+Et maintenant dans la fonction ```draw``` de ```game``` ajoutez ceci : 
+
+```javascript
+  const displayScore = new Intl.NumberFormat(["fr-FR"]).format(this.score);
+  this.ctx.font = "20px Arial";
+  this.ctx.textAlign = "center";
+  this.ctx.fillText(`Score : ${displayScore}`, this.canvas.width / 2, 20);
+```
+
+### Game Over
