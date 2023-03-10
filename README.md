@@ -378,11 +378,33 @@ Dans la class ```Platform```, ajoutons la fonction qui va check les collisions.
   }
 ```
 
-```javascript
+Créeons la fonction ```getHit``` ) l'intérieur du ```doodler```.
 
+```javascript
+  getHit(platform) {
+    this.vy = this.jumpforce;
+    if (platform.canGenerate) {
+      game.generatePlatforms(1, doodler.y - 3 * Platform.maxGap);
+      platform.canGenerate = false;
+    }
+  },
 ```
 
-Ensuite dans la bouvcle for eaach à l'intérieur de notre bou
+Ensuite dans la boucle for eaach qui est à l'intérieur du ```playing``` de ```game```.
+
+```javascript
+  const { x, y, width, height, offsetTop } = doodler;
+  if (
+    platform.checkCollision(x, y, width, height, offsetTop) &&
+    doodler.vy > 0
+  ) {
+    doodler.getHit(platform);
+  }
+```
+
+### Remove platform
+
+
 
 ## Part 5 - Score and reset
 
