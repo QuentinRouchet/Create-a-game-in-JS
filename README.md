@@ -378,11 +378,49 @@ Dans la class ```Platform```, ajoutons la fonction qui va check les collisions.
   }
 ```
 
-```javascript
+Créeons la fonction ```getHit``` ) l'intérieur du ```doodler```.
 
+```javascript
+  getHit(platform) {
+    this.vy = this.jumpforce;
+    if (platform.canGenerate) {
+      game.generatePlatforms(1, doodler.y - 3 * Platform.maxGap);
+      platform.canGenerate = false;
+    }
+  },
 ```
 
-Ensuite dans la bouvcle for eaach à l'intérieur de notre bou
+Ensuite dans la boucle for eaach qui est à l'intérieur du ```playing``` de ```game```.
+
+```javascript
+  const { x, y, width, height, offsetTop } = doodler;
+  if (
+    platform.checkCollision(x, y, width, height, offsetTop) &&
+    doodler.vy > 0
+  ) {
+    doodler.getHit(platform);
+  }
+```
+
+### Remove platform
+
+Dans le vrai Doodle Jump, on ne peut pas retourner sur une platform qui était hors de l'écran. Il nous reste donc plus qu'a enlever les platform hors de l'écran.
+
+Premièrement ajoutez ceci dans l'```update``` de la class ````Platform``` :
+
+```javascript
+  if (this.y > game.canvas.height) {
+    this.isAlive = false;
+  }
+```
+
+Mettez ceci dans la boucle ```forEach``` du ```playing``` de l'objet ```game```:
+
+```javascript
+  if (!platform.isAlive) {
+    return;
+  }
+```
 
 ## Part 5 - Score and reset
 
