@@ -237,7 +237,7 @@ Toujours dans la fonction ```update``` du ```doodler``` ajoutez ceci :
     this.x = game.canvas.width;
   }
 ```
-
+Now we will make it so that the image transfers in a fluid manner to the other side of the screen when it exits from one side.
 Maintenant nous devons lui faire afficher le résultat, pour ça nous devons accéder à la fonction ```draw``` du ```doodler``` et préciser ceci :
 
 ```javascript
