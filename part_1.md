@@ -138,4 +138,4 @@ const doodler = {
 And voilà ! After these steps, you should be able to see your little doodler on the top left of the screen.
 Okay, now we have initialize the game. Let's go to the second part to make the character move.
 
-[<< Go back](./README.md) [Part 2 >>](./part_2.md)
+[<< Go back](./README.md) || [Part 2 >>](./part_2.md)
