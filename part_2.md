@@ -85,5 +85,4 @@ game.ctx.drawImage(
 );
 ```
 
-[Go back](./part_1.md)
-[Part 3](./part_3.md)
+[<< Go back](./part_1.md) || [Part 3 >>](./part_3.md)

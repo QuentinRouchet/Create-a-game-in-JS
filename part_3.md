@@ -75,5 +75,4 @@ if (this.y < game.canvas.height / 2.8) {
 }
 ```
 
-[Go back](./part_2.md)
-[Part 3](./part_4.md)
+[<< Go back](./part_2.md) || [Part 4 >>](./part_4.md)

@@ -85,5 +85,4 @@ if (!platform.isAlive) {
 }
 ```
 
-[Go back](./part_3.md)
-[Part 3](./part_5.md)
+[<< Go back](./part_3.md) || [Part 5 >>](./part_5.md)

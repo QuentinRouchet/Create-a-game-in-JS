@@ -49,4 +49,4 @@ if (this.y > game.canvas.height) {
 }
 ```
 
-[Go back](./part_4.md)
+[<< Go back](./part_4.md)
