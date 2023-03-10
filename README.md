@@ -17,3 +17,5 @@ In Doodle Jump you can jump, fall, and start over. The goal of the game is to tr
 ## The tutorial
 
 First, please fork this repository. In the assets folder you will find the graphical assests. The HTML and CSS are already completed. Indeed, we will try to not waste too much time with things you already know.
+
+[Part 1 >>](./part_1.md)
