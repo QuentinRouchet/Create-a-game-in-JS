@@ -1,6 +1,6 @@
 ## Part 1 - Initialize the game
 
-### 1. Game object
+### Game object
 
 The first step will be to create an object named `game`. As you probably noticed, we will work in a HTML canvas. This is a functionality offered by HTML 5 which allows us to draw a canvas/an area on which we can determine a context and make all kind of actions. This is used to make games or create animations zones.
 
@@ -93,7 +93,7 @@ const game = {
 game.init();
 ```
 
-### 2. Doodler (character)
+### Doodler (character)
 
 Let's create our main character, the doodler!
 
