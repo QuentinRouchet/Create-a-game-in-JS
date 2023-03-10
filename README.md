@@ -2,7 +2,7 @@
 
 ## Introduction 
 
-Hello and welcome to this workshop where we will create a Doodle Jump clone. We will work with vanilla Java Script. But don't worry, you will learn a lot of new things like :
+Hello and welcome to this workshop where we will create a Doodle Jump clone. We will work with vanilla Java Script. But don't worry, you will learn a lot of new things and be able to :
 
 * Set up a physical system
 * Create an hitbox
@@ -16,13 +16,15 @@ In Doodle Jump you can jump, fall, and start over. The goal of the game is to tr
 
 ## The tutorial
 
-First, think about fork this repository. In the assets folder there are the graphical assests. The HTML and CSS are already completed. Indeed, we will try to not waste too much time with things you already know.
+First, please fork this repository. In the assets folder you will find the graphical assests. The HTML and CSS are already completed. Indeed, we will try to not waste too much time with things you already know.
 
 ## Part 1 - Initialize the game
 
 ### 1. Game object
 
-La première étape est de crée un un objet ```game```. Comme vous l'avez sans doute remarquez, nous allons travailler dans un canvas. Donc à l'intérieur de l'objet game, sélectionnons le canvas et parametrons la variable gameover sur false. Elle nous sera utile plus tard.
+The first step will be to create an object named ```game```. As you probably noticed, we will work in a HTML canvas. This is a functionality offered by HTML 5 which allows us to draw a canvas/an area on which we can determine a context and make all kind of actions. This is used to make games or create animations zones. 
+
+Within the game object, we will firstly select this canvas as a normal HTML element (we created it in the HTML file) and set up the gameover variable on false. This variable helps us to determine if the game is or not over. By default, the game is on and it is put on false.
 
 ```javascript
 const game = {
@@ -31,12 +33,12 @@ const game = {
 };
 ```
 
-Lorsque l'on crée un jeu, nous avons besoin de trois fonctions essensiel :
-* La fonction init : nous permet d'initialiser un état.
-* La fonction update : nous permet de changer l'état du jeu dynamiquement.
-* La fonction draw : nous permet d'afficher, de dessiner les éléments.
+Whenever we try to create a game, we need three essential functions:
+* The init function will initialize a state for the game (what is the state of things when we start).
+*The update function will help us change this state.
+*The draw function will help us display/draw elements on the canvas, so we can see the game itself (in this case we can see a doodler and platforms).
 
-Mais dans notre cas, on aura aussi besoin d'une fonction ```playing``` et ```gameOver```. ```playing``` définira l'état du jeu : est-ce que le jeu tourne ou est-il sur l'écran reset. Ensuite, le ```gameOver``` définira si le personnage est tombé hors de l'écran ou pas. 
+To these essential function, we will add a ```playing``` and a ```gameOver``` function. The playing function will define the state of our game: is it running, or are we on another screen (the reset/game over screen)? The gameOver function will determine is the doodler has fallen outside the screen, which would mean that the game is over.
 
 ```javascript
 const game = {
@@ -68,7 +70,8 @@ const game = {
 };
 ```
 
-Nous allons maintenant nous occuper du init. Donnons lui un context 2D car le jeu est en 2D. On va aussi définir une hauteur et une largeur au canvas. Initialisons aussi les autres valeurs qui nous serons utiles plus tard.
+We will first start by determining the init function. We will give it a 2D context because we are creating a 2D game (this is a given when you use HTML canvas: you have access to various premades in js, including context options).
+We also initialize variables that will prove to be useful later.
 
 ```javascript
 
@@ -124,9 +127,11 @@ game.init();
 
 ### 2. Doodler (character)
 
-Let's create our main character. Comme pour l'objet jeu, nous allons devoir l'initialiser, l'update et l'afficher. On va aussi lui donner une positon sur le plan, une taille, et d'autres paramètres bien utiles. 
+Let's create our main character, the doodler! 
 
-Nous mettons les deux sources du main character dans sources et on se sert d'une boucle et de direction pour définir dans quel sens le personnage doit être tourner.
+As for the game object, we have to create functions to init, update and draw. We will also give it a place within the canva, a size and some other useful parameters.
+
+We give two sources for the image displaying the doodler, one for when it is turnt left and one for when it is turnt right. Then, we use a for loop to determine in which sense it is.
 
 ```javascript
 const doodler = {
@@ -162,22 +167,23 @@ const doodler = {
 };
 ```
 
-Et voila ! Normalement, le personnage devrait apparaitre sur votre écran en haut à gauche.
+And voilà ! After these steps, you should be able to see your little doodler on the top left of the screen.
 Okay, now we have initialize the game. Let's go to the second part to make the character move.
 
 ## Part 2 - Make the doodler move
 
 ### Controller
-Comme son nom l'indique, le controller va nous permettre de controler le personnage. Nous auron besoin d'```EventListener``` pour vérifier quelle touche est pressée et quand est-ce qu'elle est relachée.
 
-Au niveau de l'```EventListener``` nous entrons trois paramètres : 
-* Paramètre 1 : action / l'évènement.
-* Paramètre 2 : la fonction appellée lorsque l'évènement est triger.
-* Paramètre 3 : on désactive le bubbling pour empêcher que l'évènement remonte dans le DOM.
+We will create a controller to, as its name indicates, control our doodler. We will use an ```EventListener``` to check when a key is pressed and when it is released.
 
-Le ```set``` prend toujours deux paramètres :
-* Paramètre 1 : la clé
-* Paramètre 2 : sa valeur
+We will use three parameters:
+*The action/event
+*The function to be called when the action is performed
+*The deactivation of bubbling by a false boolean value
+
+The ```set``` used on the kays of the controller has two parameters:
+*its key (the key to press)
+*its value
 
 ```javascript
 const controller = {
@@ -200,16 +206,15 @@ const controller = {
 };
 ```
 
-A ce stade nous n'aurons plus besoin de modifier le controller.
+At this point the controller is complete and do not need to be modified anymore, as we have all controls that are needed for our doodler.
 
-
-Dans l'objet ```game``` au niveau du ```init``` il faut appeller le ```init``` du ```controller```.
+Within the ```game``` object, at the ```init``` function level, we need to call the controller ```init```.
 
 ```javascript
   controller.init();
 ```
 
-Dans l'objet ```doodler``` au niveau du ```update``` il faut ajouter ces deux conditions :
+In the ```doodler``` object, at the ```update``` function level, we need to add those conditions so that our doodler moves along:
 
 ```javascript
   if (controller.keys.get("ArrowLeft")) {
@@ -223,11 +228,11 @@ Dans l'objet ```doodler``` au niveau du ```update``` il faut ajouter ces deux co
   }
 ```
 
-Magie! Le doodler peut se balader de gauche à droite maintenant. Vous remarquerez que le personnage peut sortir de l'écran. Dans le vrai jeu Doodle Jump, le personnage peut passer d'un côté à l'autre de l'écran. Let's do the same!
+It's like magic! Your doodler is now able to move from left to right. You will notice that the doodler can go out of the screen. In the real game, when that happens, the character moves from one side of the screen to the other. Let's do the same!
 
-### Passage d'écran
+### From one side to another
 
-Toujours dans la fonction ```update``` du ```doodler``` ajoutez ceci :
+Within the ```update``` function, in the ```doodler``` object, add this:
 
 ```javascript
   if (this.x > game.canvas.width) {
@@ -237,8 +242,8 @@ Toujours dans la fonction ```update``` du ```doodler``` ajoutez ceci :
     this.x = game.canvas.width;
   }
 ```
-Now we will make it so that the image transfers in a fluid manner to the other side of the screen when it exits from one side.
-Maintenant nous devons lui faire afficher le résultat, pour ça nous devons accéder à la fonction ```draw``` du ```doodler``` et préciser ceci :
+Now we will make it so that the image transfers in a fluid manner to the other side of the screen when it exits from one side. In order to do so, we need to access the  ```draw``` function within the ```doodler``` object and add this:
+
 
 ```javascript
   game.ctx.drawImage(
@@ -255,7 +260,7 @@ Maintenant nous devons lui faire afficher le résultat, pour ça nous devons acc
 
 ## Part 3 - Platform
 
-Let's create our platforms. Dans un premier nous allons crée la class ```Platform```
+Let's create our platforms. To do so, let's create the ```Platform``` object.
 
 ```javascript
 class Platform {
@@ -288,7 +293,7 @@ class Platform {
 }
 ```
 
-Ajoute cette loop dans la fonction ```draw``` de l'objet ```game```
+Let's now add this loop in the ```draw``` section of the ```game``` object.
 
 ```javascript
   this.platforms.forEach((platform, index) => {
@@ -296,7 +301,7 @@ Ajoute cette loop dans la fonction ```draw``` de l'objet ```game```
   });
 ```
 
-Ajoute cette fonction dans l'objet ```game```
+Let's now write the function to generate platform in the ```game``` object.
 
 ```javascript
   generatePlatforms: function (number = 1, baseY = 0) {
@@ -307,7 +312,7 @@ Ajoute cette fonction dans l'objet ```game```
   },
 ```
 
-Maintenant il faut l'initialiser donc direction le ```init``` de ```game``` et écrit ça : 
+We have to initialize this newly designd function and thus need to incorporate it in the ```init``` function of the ```game``` object.
 
 ```javascript
   this.generatePlatforms(3, doodler.y);
@@ -315,7 +320,7 @@ Maintenant il faut l'initialiser donc direction le ```init``` de ```game``` et �
 
 ### Next
 
-Nous allons maintenant faire en sorte de toujours avoir une plateforme en dessous du doodler. Comme ça lorsqu'il apparaitra il ne pourra pas tomber directement dans le vide. Évidemment on initiliase ceci dans la fonction ```init``` de ```game```.
+Now we will try to alaways have a platform under our doodler. By doing that we can organize things so that he does not fall when he is drawed. This is still happening in the ```init``` part of ```game```.
 
 ```javascript
   const firstPlatform = new Platform();
@@ -324,7 +329,7 @@ Nous allons maintenant faire en sorte de toujours avoir une plateforme en dessou
   this.platforms.push(firstPlatform);
 ```
 
-Dans le vrai jeu Doodle Jump, le personnage ne dépasse jamais la moitié de l'écran lorsqu'il saute. Direction la fonction ```update``` de l'objet ```doodler``` Cette condition va régler le probleme :
+In the real game, the doodler can never go up more than half of the screen size whenever he jumps. In the ```update``` function of the ```doodler``` object, we can add this condition to solve this issue:
 
 ```javascript
     if (this.y < game.canvas.height / 2.8) {
@@ -332,19 +337,21 @@ Dans le vrai jeu Doodle Jump, le personnage ne dépasse jamais la moitié de l'�
     }
 ```
 
-## Part 4 - Physique and hitbox
+## Part 4 - Physics and hitbox
 
-### Physique
+### Physics
 
-Donnons un peu de mouvement à tout ça, mettez une vélocité sur l'axe y de -25 au ```doodler```. 
 
-Bizarre... Il ne se passe rien. Ajoutez cette ligne dans l'```update``` du ```doodler``` : 
+Let's make this move! Put ```doodler```'s vy to -25.
+
+
+Weird... Nothing happens! Add this line in the ```update``` part:
 
 ```javascript
   this.vy += this.vy > game.gravity ? 0 : 1;
 ```
 
-Woah! Le personnage tombe!
+Woah! The doodler is falling!
 
 Dans l'```update``` de la class ```Platform``` on peut ajouter ceci :
 
@@ -365,7 +372,7 @@ Now we need to call the function update inside the ```playing``` function of the
 
 ### Hitbox
 
-Dans la class ```Platform```, ajoutons la fonction qui va check les collisions.
+In the ```platform``` class, we will add a function to check hitboxes.
 
 ```javascript
   checkCollision(x, y, width, height, offsetTop = 0) {
@@ -378,7 +385,7 @@ Dans la class ```Platform```, ajoutons la fonction qui va check les collisions.
   }
 ```
 
-Créeons la fonction ```getHit``` ) l'intérieur du ```doodler```.
+Let's create the function handling the hit between the ```doodler``` and the ```platform```.
 
 ```javascript
   getHit(platform) {
@@ -390,7 +397,8 @@ Créeons la fonction ```getHit``` ) l'intérieur du ```doodler```.
   },
 ```
 
-Ensuite dans la boucle for eaach qui est à l'intérieur du ```playing``` de ```game```.
+
+And now we modify the foreach loop within the ```playing``` function of the ```game```.
 
 ```javascript
   const { x, y, width, height, offsetTop } = doodler;
@@ -404,9 +412,9 @@ Ensuite dans la boucle for eaach qui est à l'intérieur du ```playing``` de ```
 
 ### Remove platform
 
-Dans le vrai Doodle Jump, on ne peut pas retourner sur une platform qui était hors de l'écran. Il nous reste donc plus qu'a enlever les platform hors de l'écran.
+In the real Doodle Jump game, we cannot jump back on a platform that got out of screen. We now have to remove those platforms from the game.
 
-Premièrement ajoutez ceci dans l'```update``` de la class ````Platform``` :
+Let's add this in the ``update``` function of the ```platform```class:
 
 ```javascript
   if (this.y > game.canvas.height) {
@@ -414,7 +422,7 @@ Premièrement ajoutez ceci dans l'```update``` de la class ````Platform``` :
   }
 ```
 
-Mettez ceci dans la boucle ```forEach``` du ```playing``` de l'objet ```game```:
+And let's add this in the ```forEach``` of the ```playing``` function within the ```game``` object:
 
 ```javascript
   if (!platform.isAlive) {
@@ -426,9 +434,9 @@ Mettez ceci dans la boucle ```forEach``` du ```playing``` de l'objet ```game```:
 
 ### Score
 
-Maintenant que le jeu est jouable, ajoutons un système de score.
+Now that the game is playable, we need a scoring system!
 
-Dans la fonction ```playing``` de l'objet ```game``` ajoutez ceci :
+Within the ```playing``` function of the ```game``` object, add this :
 
 ```javascript
   this.realScore += Math.round(-doodler.vy / 5);
@@ -436,7 +444,7 @@ Dans la fonction ```playing``` de l'objet ```game``` ajoutez ceci :
   this.frame++;
 ```
 
-Et maintenant dans la fonction ```draw``` de ```game``` ajoutez ceci : 
+And now within ```draw``` of ```game``` add this : 
 
 ```javascript
   const displayScore = new Intl.NumberFormat(["fr-FR"]).format(this.score);
@@ -447,7 +455,9 @@ Et maintenant dans la fonction ```draw``` de ```game``` ajoutez ceci :
 
 ### Game Over
 
-Dans fonction ```gameOver``` de ```game``` nous pouvons ajouter ceci :
+We know how to handle a loss! Let's design what happens when the game is over.
+
+In the ```gameOver``` function of ```game```, we add this :
 
 ```javascript
   this.ctx.font = "20px Arial";
@@ -467,7 +477,7 @@ Dans fonction ```gameOver``` de ```game``` nous pouvons ajouter ceci :
   }
 ```
 
-Et enfin la touche finale. Dans l'```update``` du  ```doodler``` on peut écrice ceci :
+And the final touch, within the ```update``` of ```doodler```:
 
 ```javascript
   if (this.y > game.canvas.height) {
