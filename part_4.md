@@ -69,7 +69,7 @@ if (platform.checkCollision(x, y, width, height, offsetTop) && doodler.vy > 0) {
 
 In the real Doodle Jump game, we cannot jump back on a platform that got out of screen. We now have to remove those platforms from the game.
 
-Let's add this in the ``update`function of the`platform```class:
+Let's add this in the ```update``` function of the ```platform``` class:
 
 ```javascript
 if (this.y > game.canvas.height) {
