@@ -1,6 +1,6 @@
 // CONTROLLER
 const controller = {
-  keys: null, // ?? Pourquoi keys est null ici
+  keys: null,
   init: function () {
     window.addEventListener("keydown", this.keyDown, false);
     window.addEventListener("keyup", this.keyUp, false);
@@ -62,11 +62,9 @@ const game = {
   draw: function () {
     doodler.draw();
     this.platforms.forEach((platform, index) => {
-      // **
-      // if (!platform.isAlive) {
-      //   return;
-      // }
-      // **
+      if (!platform.isAlive) {
+        return;
+      }
 
       platform.draw();
     });
@@ -87,17 +85,13 @@ const game = {
   playing: function () {
     doodler.update();
 
-    // **
     this.platforms.forEach((platform, index) => {
-      // ** Fais disparaitre les platforms en dehors de l'écran
-      // if (!platform.isAlive) {
-      //   return;
-      // }
-      // **
+      if (!platform.isAlive) {
+        return;
+      }
 
       platform.update();
 
-      // ** Hitbox
       const { x, y, width, height, offsetTop } = doodler;
       if (
         platform.checkCollision(x, y, width, height, offsetTop) &&
@@ -105,9 +99,7 @@ const game = {
       ) {
         doodler.getHit(platform);
       }
-      // **
     });
-    // **
 
     this.realScore += Math.round(-doodler.vy / 5);
     this.score = this.score < this.realScore ? this.realScore : this.score;
@@ -205,7 +197,6 @@ const doodler = {
     );
   },
 
-  // ** Gére la hitbox des platforms et le rebond
   getHit(platform) {
     this.vy = this.jumpforce;
     if (platform.canGenerate) {
@@ -213,9 +204,9 @@ const doodler = {
       platform.canGenerate = false;
     }
   },
-  // **
 };
 
+// PLATFORM
 class Platform {
   static minGap = 100;
   static maxGap = 250;
@@ -237,11 +228,9 @@ class Platform {
   update() {
     this.vy = -doodler.vy; // The dooler make a little jump at the start
 
-    // **
-    // if (this.y > game.canvas.height) {
-    //   this.isAlive = false;
-    // }
-    // **
+    if (this.y > game.canvas.height) {
+      this.isAlive = false;
+    }
 
     this.x += this.vx;
     this.y += this.vy;
@@ -251,7 +240,6 @@ class Platform {
     game.ctx.drawImage(this.image, this.x, this.y);
   }
 
-  // ** Check les collisions
   checkCollision(x, y, width, height, offsetTop = 0) {
     if (this.x <= x + width && this.x + this.width >= x) {
       if (this.y <= y + height && this.y + this.height >= y + offsetTop) {
@@ -260,7 +248,6 @@ class Platform {
     }
     return false;
   }
-  // **
 }
 
 game.init();
