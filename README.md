@@ -404,7 +404,23 @@ Ensuite dans la boucle for eaach qui est à l'intérieur du ```playing``` de ```
 
 ### Remove platform
 
+Dans le vrai Doodle Jump, on ne peut pas retourner sur une platform qui était hors de l'écran. Il nous reste donc plus qu'a enlever les platform hors de l'écran.
 
+Premièrement ajoutez ceci dans l'```update``` de la class ````Platform``` :
+
+```javascript
+  if (this.y > game.canvas.height) {
+    this.isAlive = false;
+  }
+```
+
+Mettez ceci dans la boucle ```forEach``` du ```playing``` de l'objet ```game```:
+
+```javascript
+  if (!platform.isAlive) {
+    return;
+  }
+```
 
 ## Part 5 - Score and reset
 
