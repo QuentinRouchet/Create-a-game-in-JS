@@ -334,6 +334,8 @@ Dans le vrai jeu Doodle Jump, le personnage ne dépasse jamais la moitié de l'�
 
 ## Part 4 - Physique and hitbox
 
+### Physique
+
 Donnons un peu de mouvement à tout ça, mettez une vélocité sur l'axe y de -25 au ```doodler```. 
 
 Bizarre... Il ne se passe rien. Ajoutez cette ligne dans l'```update``` du ```doodler``` : 
@@ -356,9 +358,31 @@ Dans l'```update``` de la class ```Platform``` on peut ajouter ceci :
 Now we need to call the function update inside the ```playing``` function of the ```game``` like this :
 
 ```javascript
-  platform.update();
+  this.platforms.forEach((platform, index) => {
+    platform.update();
+  });
 ```
 
+### Hitbox
+
+Dans la class ```Platform```, ajoutons la fonction qui va check les collisions.
+
+```javascript
+  checkCollision(x, y, width, height, offsetTop = 0) {
+    if (this.x <= x + width && this.x + this.width >= x) {
+      if (this.y <= y + height && this.y + this.height >= y + offsetTop) {
+        return true;
+      }
+    }
+    return false;
+  }
+```
+
+```javascript
+
+```
+
+Ensuite dans la bouvcle for eaach à l'intérieur de notre bou
 
 ## Part 5 - Score and reset
 
