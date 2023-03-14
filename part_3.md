@@ -50,7 +50,7 @@ Let's now write the function to generate platform in the `game` object.
   },
 ```
 
-We have to initialize this newly designd function and thus need to incorporate it in the `init` function of the `game` object.
+We have to initialize this newly designed function and thus need to incorporate it in the `init` function of the `game` object.
 
 ```javascript
 this.generatePlatforms(3, doodler.y);
@@ -58,7 +58,7 @@ this.generatePlatforms(3, doodler.y);
 
 ### Next
 
-Now we will try to alaways have a platform under our doodler. By doing that we can organize things so that he does not fall when he is drawed. This is still happening in the `init` part of `game`.
+Now we will try to alawys have a platform under our doodler. By doing that we can organize things so that he does not fall when he is drawed. This is still happening in the `init` part of `game`.
 
 ```javascript
 const firstPlatform = new Platform();
