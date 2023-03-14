@@ -8,7 +8,7 @@ class Platform {
   static maxGap = 250;
 
   constructor(y = 0) {
-    // We will need later to define if the platform should desapear or not
+    // We will need later to define if the platform should disappear or not
     this.isAlive = true;
     this.width = 138;
     this.height = 44;
