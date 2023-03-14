@@ -59,6 +59,7 @@ Let's create the function handling the hit between the `doodler` and the `platfo
 ```
 
 And now we modify the foreach loop within the `playing` function of the `game`.
+Le ```const { x, y, width, height, offsetTop } = doodler;``` est en réalité une déstructuration de variable. Ca nous permet de ne pas réécrire ligne ligne.
 
 ```javascript
 const { x, y, width, height, offsetTop } = doodler;
