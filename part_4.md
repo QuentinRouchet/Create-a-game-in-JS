@@ -31,6 +31,8 @@ this.platforms.forEach((platform, index) => {
 
 ### Hitbox
 
+
+
 In the `platform` class, we will add a function to check hitboxes.
 
 ```javascript
