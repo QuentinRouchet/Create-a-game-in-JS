@@ -90,6 +90,7 @@ const game = {
   gameOver: function () {},
 };
 
+// This function should always be at the end of our document
 game.init();
 ```
 
