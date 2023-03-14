@@ -9,7 +9,6 @@ Within the `playing` function of the `game` object, add this :
 ```javascript
 this.realScore += Math.round(-doodler.vy / 5);
 this.score = this.score < this.realScore ? this.realScore : this.score;
-this.frame++;
 ```
 
 And now within `draw` of `game` add this :
