@@ -56,7 +56,7 @@ We have to initialize this newly designed function and thus need to incorporate 
 this.generatePlatforms(3, doodler.y);
 ```
 
-### Next
+### First platform
 
 Now we will try to always have a platform under our doodler. By doing that we can organize things so that he does not fall when he is drawed. This is still happening in the `init` part of `game`.
 
