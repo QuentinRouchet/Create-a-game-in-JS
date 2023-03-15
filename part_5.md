@@ -31,7 +31,7 @@ this.ctx.fillText(`Score : ${displayScore}`, this.canvas.width / 2, 20);
 
 We know how to handle a loss! Let's design what happens when the game is over.
 
-We want to make a simple screen with a simple message like "You lost" and just bellow a message like "Press SPACE to restart". So let's do it.
+We want to make a simple screen with a simple message like "You lost" and just bellow another message like "Press SPACE to restart". So let's do it.
 In the `gameOver` function of `game`, we add this :
 
 ```javascript
