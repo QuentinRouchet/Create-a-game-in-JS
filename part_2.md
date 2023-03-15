@@ -13,7 +13,7 @@ We will use three parameters on the ```addEventListener```:
 
 The `set` used on the keys of the controller has two parameters:
 * its key (the key to press)
-* its value (is the key is pressed or not)
+* its value (is the key pressed or not?)
 
 ```javascript
 const controller = {
