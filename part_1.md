@@ -52,6 +52,7 @@ const game = {
     this.ctx = this.canvas.getContext("2d");
     this.canvas.width = 600;
     this.canvas.height = 800;
+    this.gravity = 8;
     this.score = 0;
     this.realScore = 0;
     this.highscore = 0;
