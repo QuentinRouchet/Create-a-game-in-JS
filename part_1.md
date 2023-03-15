@@ -6,12 +6,11 @@
 
 The first step will be to create an object named `game`. As you probably noticed, we will work in a HTML canvas. This is a functionality offered by HTML 5 which allows us to draw a canvas/an area on which we can determine a context and make all kind of actions. This is used to make games or create animations zones.
 
-Within the game object, we will firstly select this canvas as a normal HTML element (we created it in the HTML file) and set up the gameover variable on false. This variable helps us to determine if the game is or not over. By default, the game is on and it is put on false.
+Within the game object, we will firstly select this canvas as a normal HTML element (we created it in the HTML file) and set up the gameover variable on false.
 
 ```javascript
 const game = {
   canvas: document.querySelector("#game"),
-  gameover: false,
 };
 ```
 
@@ -26,7 +25,6 @@ To these essential function, we will add a `playing` and a `gameOver` function. 
 ```javascript
 const game = {
   canvas: document.querySelector("#game"),
-  gameover: false,
 
   // Initialize the game properties
   init: function () {},
@@ -49,7 +47,6 @@ We also initialize variables that will prove to be useful later.
 ```javascript
 const game = {
   canvas: document.querySelector("#game"),
-  gameover: false,
 
   init: function () {
     this.ctx = this.canvas.getContext("2d");
