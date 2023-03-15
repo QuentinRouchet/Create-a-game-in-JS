@@ -11,11 +11,12 @@ this.realScore += Math.round(-doodler.vy / 5);
 this.score = this.score < this.realScore ? this.realScore : this.score;
 ```
 
-In the code you can see three native function of JavaScript : 
+In the bellow code you can see three native function of JavaScript : 
 * ```font``` : select a font for the context
 * ```textAlign``` : select an alignement for the text
 * ```fillText``` : write your text
-And now within `draw` of `game` add this :
+
+Now we need to go into the `draw()` function of the `game` object and add this :
 
 ```javascript
 const displayScore = new Intl.NumberFormat(["fr-FR"]).format(this.score);
@@ -30,6 +31,7 @@ this.ctx.fillText(`Score : ${displayScore}`, this.canvas.width / 2, 20);
 
 We know how to handle a loss! Let's design what happens when the game is over.
 
+We want to make a simple screen with a simple message like "You lost" and just bellow a message like "Press SPACE to restart". So let's do it.
 In the `gameOver` function of `game`, we add this :
 
 ```javascript
