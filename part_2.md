@@ -61,7 +61,7 @@ It's like magic! Your doodler is now able to move from left to right. You will n
 
 ### From one side to another
 
-Within the `update` function, in the `doodler` object, add this:
+To make the doodler move from one to another we need two conditions. Within the `update` function, in the `doodler` object, add this:
 
 ```javascript
 if (this.x > game.canvas.width) {
