@@ -1,3 +1,5 @@
+[<< Go back](./part_2.md) || [Part 4 >>](./part_4.md)
+
 ## Part 3 - Platform
 
 Let's create our platforms. To do so, let's create the `Platform` object.
