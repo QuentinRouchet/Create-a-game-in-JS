@@ -1,3 +1,5 @@
+[<< Go back](./part_4.md)
+
 ## Part 5 - Score and reset
 
 ### Score
