@@ -44,11 +44,12 @@ this.ctx.fillText(
   this.canvas.height / 2 + 26
 );
 if (controller.keys.get("Space")) {
+  // Reload the index.html
   window.location = "index.html";
 }
 ```
 
-And the final touch, within the `update` of `doodler`:
+And the final touch, we need to switch the "status" of the game on ```gameOver``` insteed of ```playing```. To do, go in the ```update``` of ```doodler```:
 
 ```javascript
 if (this.y > game.canvas.height) {
