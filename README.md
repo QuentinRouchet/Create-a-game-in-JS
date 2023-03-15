@@ -10,6 +10,8 @@ Hello and welcome to this workshop where we will create a Doodle Jump clone. We 
 - Generate a level in a random way
 - Manage a score
 
+But you need to know that we are going to mainly make object oriented. So if you're not confident with the object in JavaScript, it's your moment to learn!  
+
 ## Game presentation
 
 In Doodle Jump you can jump, fall, and start over. The goal of the game is to try to go as high as possible and always get a better score than before. If you fall, you start over.
