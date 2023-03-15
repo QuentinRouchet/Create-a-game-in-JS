@@ -100,7 +100,7 @@ game.init();
 
 Let's create our main character, the doodler!
 
-As for the game object, we have to create functions to init, update and draw. We will also give it a place within the canva, a size and some other useful parameters.
+As for the game object, we have to create functions to ```init```, ```update``` and ```draw```. We will also give it a place within the canva, a size and some other useful parameters.
 
 We give two sources for the image displaying the doodler, one for when it is turnt left and one for when it is turnt right. Then, we use a for loop to determine in which sense it is.
 
