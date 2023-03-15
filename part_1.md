@@ -15,9 +15,9 @@ const game = {
 
 Whenever we try to create a game, we need three essential functions:
 
-- The init function will initialize a state for the game (what is the state of things when we start).
-  *The update function will help us change this state.
-  *The draw function will help us display/draw elements on the canvas, so we can see the game itself (in this case we can see a doodler and platforms).
+* The init function will initialize a state for the game (what is the state of things when we start).
+* The update function will help us change this state.
+* The draw function will help us display/draw elements on the canvas, so we can see the game itself (in this case we can see a doodler and platforms).
 
 To these essential function, we will add a `playing` and a `gameOver` function. The playing function will define the state of our game: is it running, or are we on another screen (the reset/game over screen)? The gameOver function will determine is the doodler has fallen outside the screen, which would mean that the game is over.
 
