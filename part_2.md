@@ -4,7 +4,7 @@
 
 We will create a controller to, as its name indicates, control our doodler. We will use an `EventListener` to check when a key is pressed and when it is released.
 
-We will use three parameters:
+We will use three parameters on the ```addEventListener```:
 * The action/event
 * The function to be called when the action is performed
 * The desactivation of bubbling by a false boolean value
