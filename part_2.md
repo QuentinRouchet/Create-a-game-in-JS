@@ -1,3 +1,5 @@
+[<< Go back](./part_1.md) || [Part 3 >>](./part_3.md)
+
 ## Part 2 - Make the doodler move
 
 ### Controller
