@@ -2,7 +2,7 @@
 
 ## Part 3 - Platform
 
-Let's create our platforms. To do so, let's create the `Platform` object.
+Let's create our platforms. To do so, let's create the `Platform` class. But why do we create a class instead of an object for the platform? It's because we need to create an infity of platform but we only need one doodler and one game.
 
 ```javascript
 class Platform {
