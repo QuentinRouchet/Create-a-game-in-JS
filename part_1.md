@@ -1,3 +1,5 @@
+[<< Go back](./README.md) || [Part 2 >>](./part_2.md)
+
 ## Part 1 - Initialize the game
 
 ### Game object
