@@ -66,6 +66,7 @@ The ```const { x, y, width, height, offsetTop } = doodler;``` is what we call de
 
 ```javascript
 const { x, y, width, height, offsetTop } = doodler;
+// Si le doodler entre en collision avec une plateforme et que le doodler tombe alors on appelle le getHit
 if (platform.checkCollision(x, y, width, height, offsetTop) && doodler.vy > 0) {
   doodler.getHit(platform);
 }
