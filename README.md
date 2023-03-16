@@ -8,7 +8,7 @@ Hello and welcome to this workshop where we will create a Doodle Jump clone. We 
 - Create an hitbox
 - Move a character
 - Generate a level in a random way
-- Manage a score
+- Display a score
 
 But you need to know that we are going to mainly make object oriented. So if you're not confident with the object in JavaScript, it's your moment to learn!  
 
