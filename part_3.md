@@ -41,6 +41,7 @@ this.platforms.forEach((platform, index) => {
 });
 ```
 
+Dans la fonction ci-dessous `number` est le nombre de plateforme à générer (de base il est à un). Et le `baseY` est la hauteur à laquelle les platformes vont être générée par défaut.
 Let's now write the function to generate platform in the `game` object.
 
 ```javascript
