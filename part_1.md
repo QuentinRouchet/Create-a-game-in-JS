@@ -119,7 +119,8 @@ const doodler = {
     this.images = [];
     this.offsetTop = 90;
 
-    // This loop alows us to flip the doodler
+    // This loop alows us to load the doodler images
+    // So we can have index 0 = doodler left, index 1 = doodler right
     this.sources.forEach((source, i) => {
       this.images[i] = new Image();
       this.images[i].src = source;
