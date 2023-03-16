@@ -9,6 +9,7 @@ Now that the game is playable, we need a scoring system!
 Within the `playing` function of the `game` object, add this :
 
 ```javascript
+// le realscore corresspond à la position réel du doodler
 this.realScore += Math.round(-doodler.vy / 5);
 this.score = this.score < this.realScore ? this.realScore : this.score;
 ```
