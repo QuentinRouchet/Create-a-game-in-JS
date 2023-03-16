@@ -23,6 +23,7 @@ Now we need to go into the `draw()` function of the `game` object and add this :
 
 ```javascript
 // Internationalisation au format fr du score
+// Le constructeur pour les objets qui permettent le formatage des nombres selon les règles spécifiques d'une langue.
 const displayScore = new Intl.NumberFormat(["fr-FR"]).format(this.score);
 // parameters(size font, font familly)
 this.ctx.font = "20px Arial";
