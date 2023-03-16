@@ -49,7 +49,7 @@ In the `platform` class, we will add a function to check hitboxes.
 ```
 
 Let's create the function handling the hit between the `doodler` and the `platform`. Write this function inside the `doodler`. 
-Cette fonction récupère la platform sur laquelle le personnage est tombé, le propulse plus haut et génère une nouvelle platform à chaque fois que le doodler touche la platform. Et enfin on empêche la platforme de générer plusieurs fois sur la même platforme.
+This function gets the platform which the doodler has hit, makes the doodler jump higher and generates a new platform every time that the doodler touches one platform. It also prevents the platform from generating several platform ont he same spot.
 
 ```javascript
   getHit(platform) {
@@ -62,7 +62,7 @@ Cette fonction récupère la platform sur laquelle le personnage est tombé, le 
 ```
 
 And now we modify the `forEach` loop within the `playing` function of the `game`.
-Le ```const { x, y, width, height, offsetTop } = doodler;``` est en réalité une déstructuration de variable. Ca nous permet de ne pas écrire ligne par ligne.
+The ```const { x, y, width, height, offsetTop } = doodler;``` is what we call destructuring a variable. This way we avoid having to declare each variable separately.
 
 ```javascript
 const { x, y, width, height, offsetTop } = doodler;
@@ -83,7 +83,7 @@ if (this.y > game.canvas.height) {
 }
 ```
 
-Dans la fonction ci-dessous on souhaite simplement arrêter l'exécution de la fonction grâce au return à partir du moment ou la platform n'est plus "en vie".
+In the following function we want to stop the function with a return whenever the platform is not "alive" anymore.
 And let's add this in the `forEach` of the `playing` function within the `game` object:
 
 ```javascript
