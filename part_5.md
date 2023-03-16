@@ -22,7 +22,7 @@ In the bellow code you can see three native function of JavaScript :
 Now we need to go into the `draw()` function of the `game` object and add this :
 
 ```javascript
-// Internotialisation au format fr du score
+// Internationalisation au format fr du score
 const displayScore = new Intl.NumberFormat(["fr-FR"]).format(this.score);
 // parameters(size font, font familly)
 this.ctx.font = "20px Arial";
