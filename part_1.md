@@ -66,6 +66,8 @@ const game = {
   },
 
   update: function () {
+    // clearRect allows us to 
+    // parameter(x, y, largeur, hauteur)
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
     // reload game
