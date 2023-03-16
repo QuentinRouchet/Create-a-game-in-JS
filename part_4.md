@@ -34,9 +34,9 @@ this.platforms.forEach((platform, index) => {
 
 ### Hitbox
 
-
-
 In the `platform` class, we will add a function to check hitboxes.
+
+FR : Cette fonction compare la position de la plateforme avec celle du doodler. Si celui-ci se trouve entre celle de la plateforme, la fonction retournera une valeur positive (true). Sinon elle retournera une valeur négative (false)
 
 ```javascript
   checkCollision(x, y, width, height, offsetTop = 0) {
