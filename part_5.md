@@ -51,8 +51,8 @@ if (controller.keys.get("Space")) {
   // window.location = "index.html";
   
   // Reload the canvas
-  this.init()
-  window.cancelAnimationFrame()
+  this.init() // Reload all init parameters
+  window.cancelAnimationFrame() // Cancel the requestAnimationFrame
 }
 ```
 
