@@ -14,7 +14,7 @@ this.vy += this.vy > game.gravity ? 0 : 1;
 
 Woah! The doodler is falling!
 
-Dans l'`update` de la class `Platform` on peut ajouter ceci :
+In the`update` of the `Platform` class we can add this :
 
 ```javascript
 this.vy = -doodler.vy; // The dooler make a little jump at the start
