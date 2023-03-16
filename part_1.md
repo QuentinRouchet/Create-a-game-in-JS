@@ -59,7 +59,8 @@ const game = {
     this.currentMode = "playing";
 
     doodler.init();
-
+    
+    // If we don't put the update here in the init, at the first launch the animation will not works 
     this.update();
   },
 
