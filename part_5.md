@@ -21,6 +21,7 @@ In the bellow code you can see three native function of JavaScript :
 Now we need to go into the `draw()` function of the `game` object and add this :
 
 ```javascript
+// Internotialisation au format fr du score
 const displayScore = new Intl.NumberFormat(["fr-FR"]).format(this.score);
 // parameters(size font, font familly)
 this.ctx.font = "20px Arial";
@@ -47,7 +48,11 @@ this.ctx.fillText(
 );
 if (controller.keys.get("Space")) {
   // Reload the index.html
-  window.location = "index.html";
+  // window.location = "index.html";
+  
+  // Reload the canvas
+  this.init()
+  window.cancelAnimationFrame()
 }
 ```
 
