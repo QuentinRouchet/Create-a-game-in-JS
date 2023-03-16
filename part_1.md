@@ -73,6 +73,8 @@ const game = {
     // reload game
     this[this.currentMode]();
 
+    // Demande à la fenêtre la permission pour éxécuter une fonction relative à une animation
+    // Ca permet de limiter la vitesse du jeu en fonction de la vitesse de l'écran. Stp David mets ton écran en 60hz
     window.requestAnimationFrame(() => {
       this.update();
     });
