@@ -83,6 +83,7 @@ if (this.y > game.canvas.height) {
 }
 ```
 
+Dans la fonction ci-dessous on souhaite simplement arrêter l'exécution de la fonction grâce au return à partir du moment ou la platform n'est plus "en vie".
 And let's add this in the `forEach` of the `playing` function within the `game` object:
 
 ```javascript
