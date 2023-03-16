@@ -49,7 +49,7 @@ In the `platform` class, we will add a function to check hitboxes.
 ```
 
 Let's create the function handling the hit between the `doodler` and the `platform`. Write this function inside the `doodler`. 
-Cette fonction récupère la platform sur laquelle le personnage est tombé, le propulse plus haut et génère une nouvelle platform à chaque fois que le doodler touche la platform.
+Cette fonction récupère la platform sur laquelle le personnage est tombé, le propulse plus haut et génère une nouvelle platform à chaque fois que le doodler touche la platform. Et enfin on empêche la platforme de générer plusieurs fois sur la même platforme.
 
 ```javascript
   getHit(platform) {
