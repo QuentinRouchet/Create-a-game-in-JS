@@ -26,6 +26,7 @@ this.y += this.vy;
 Now we need to call the function update inside the `playing` function of the `game` like this :
 
 ```javascript
+// Mets à jour les nouvelles plateformes qui on été générée.
 this.platforms.forEach((platform, index) => {
   platform.update();
 });
