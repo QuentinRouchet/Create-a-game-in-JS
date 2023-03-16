@@ -70,6 +70,8 @@ const game = {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
     // reload game
+    // On utilise this[this.currentMode]() et pas this.this.currentMode car ce n'est pas autorisé en JS (ça ne fonctionne pas)
+    // game est un objet, on peut accéder à ces propriétés et méthode comme dans n'importe quel autre objet soit via l'opérateur d'accéssibilité "." soit comme un tableau à l'aide des crochets "[]"
     this[this.currentMode]();
 
     // Demande à la fenêtre la permission pour éxécuter une fonction relative à une animation
