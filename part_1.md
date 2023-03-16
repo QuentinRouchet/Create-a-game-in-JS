@@ -6,7 +6,7 @@
 
 The first step will be to create an object named `game`. As you probably noticed, we will work in a HTML canvas. This is a functionality offered by HTML 5 which allows us to draw a canvas/an area on which we can determine a context and make all kind of actions. This is used to make games or create animations zones.
 
-Within the game object, we will firstly select this canvas as a normal HTML element (we created it in the HTML file) and set up the gameover variable on false.
+Within the game object, we will firstly select this canvas as a normal HTML element (we created it in the HTML file).
 
 ```javascript
 const game = {
