@@ -62,7 +62,7 @@ Cette fonction récupère la platform sur laquelle le personnage est tombé, le 
 ```
 
 And now we modify the `forEach` loop within the `playing` function of the `game`.
-Le ```const { x, y, width, height, offsetTop } = doodler;``` est en réalité une déstructuration de variable. Ca nous permet de ne pas réécrire ligne ligne.
+Le ```const { x, y, width, height, offsetTop } = doodler;``` est en réalité une déstructuration de variable. Ca nous permet de ne pas écrire ligne par ligne.
 
 ```javascript
 const { x, y, width, height, offsetTop } = doodler;
